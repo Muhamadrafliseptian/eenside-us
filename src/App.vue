@@ -1,85 +1,86 @@
 <script setup>
-import { RouterLink, RouterView } from 'vue-router'
-import HelloWorld from './components/HelloWorld.vue'
+import { ref } from 'vue';
+
+const videoRef = ref(null);
+
+const playVideo = () => {
+  videoRef.value.play();
+};
 </script>
 
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
-
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-
-      <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
-      </nav>
-    </div>
-  </header>
-
-  <RouterView />
+  <div class="video-container">
+    <p>Gini dulu dehhhhh ngantukkkkk</p>
+    <video ref="videoRef" src="@/assets/video/us.mp4" autoplay playsinline loop muted controls
+      class="responsive-video"></video>
+    <!-- <div class="play-overlay" @click="playVideo">
+      <button v-if="videoRef.value && videoRef.value.paused" class="play-button">▶</button>
+    </div> -->
+  </div>
 </template>
 
 <style scoped>
-header {
-  line-height: 1.5;
-  max-height: 100vh;
-}
-
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
-
-nav {
+/* Container styling to manage responsiveness */
+.video-container {
+  position: relative;
   width: 100%;
-  font-size: 12px;
-  text-align: center;
-  margin-top: 2rem;
+  max-width: 600px;
+  /* Set a maximum width for larger screens */
+  margin: 0 auto;
+  /* Center the video */
+  overflow: hidden;
+  border-radius: 12px;
+  /* Rounded corners */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  /* Optional shadow for better aesthetics */
 }
 
-nav a.router-link-exact-active {
-  color: var(--color-text);
+/* Responsive video */
+.responsive-video {
+  width: 100%;
+  /* Video adjusts to container width */
+  height: auto;
+  /* Maintain aspect ratio */
+  display: block;
+  /* Remove unwanted whitespace below the video */
 }
 
-nav a.router-link-exact-active:hover {
-  background-color: transparent;
+/* Play button overlay */
+.play-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.5);
+  /* Semi-transparent overlay */
+  color: white;
+  opacity: 0;
+  transition: opacity 0.3s;
 }
 
-nav a {
-  display: inline-block;
-  padding: 0 1rem;
-  border-left: 1px solid var(--color-border);
+.play-overlay:hover {
+  opacity: 1;
+  /* Show overlay on hover */
 }
 
-nav a:first-of-type {
-  border: 0;
+.play-button {
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: white;
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  transition: background 0.3s;
 }
 
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
-
-  nav {
-    text-align: left;
-    margin-left: -1rem;
-    font-size: 1rem;
-
-    padding: 1rem 0;
-    margin-top: 1rem;
-  }
+.play-button:hover {
+  background: rgba(255, 255, 255, 0.4);
 }
 </style>
