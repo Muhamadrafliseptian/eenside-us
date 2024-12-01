@@ -10,7 +10,7 @@ const playVideo = () => {
 
 <template>
   <div class="video-container">
-    <p>Gini dulu dehhhhh ngantukkkkk</p>
+    <p>Bentar masih ngoding</p>
     <video ref="videoRef" src="@/assets/video/us.mp4" autoplay playsinline loop muted controls
       class="responsive-video"></video>
     <!-- <div class="play-overlay" @click="playVideo">
