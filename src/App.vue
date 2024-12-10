@@ -1,5 +1,6 @@
 <script setup>
 import { ref } from 'vue';
+import NavbarLayout from './components/layouts/navbar/NavbarComponents.vue'
 
 const videoRef = ref(null);
 
@@ -9,14 +10,8 @@ const playVideo = () => {
 </script>
 
 <template>
-  <div class="video-container">
-    <p>Bentar masih ngoding</p>
-    <video ref="videoRef" src="@/assets/video/us.mp4" autoplay playsinline loop muted controls
-      class="responsive-video"></video>
-    <!-- <div class="play-overlay" @click="playVideo">
-      <button v-if="videoRef.value && videoRef.value.paused" class="play-button">▶</button>
-    </div> -->
-  </div>
+  <NavbarLayout/>
+  <RouterView/>
 </template>
 
 <style scoped>
