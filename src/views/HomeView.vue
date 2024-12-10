@@ -80,6 +80,9 @@ onMounted(() => {
             <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
             <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
             <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
+            <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="4" aria-label="Slide 5"></button>
+            <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="5" aria-label="Slide 6"></button>
           </div>
           <div class="carousel-inner">
             <div class="carousel-item active">
@@ -90,6 +93,15 @@ onMounted(() => {
             </div>
             <div class="carousel-item">
               <img class="bd-placeholder-img" width="100%" height="100%" src="../assets/images/asset-3.jpeg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="var(--bs-secondary-color)"/>
+            </div>
+            <div class="carousel-item">
+              <img class="bd-placeholder-img" width="100%" height="100%" src="../assets/images/asset-4.jpeg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="var(--bs-secondary-color)"/>
+            </div>
+            <div class="carousel-item">
+              <img class="bd-placeholder-img" width="100%" height="100%" src="../assets/images/asset-5.jpeg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="var(--bs-secondary-color)"/>
+            </div>
+            <div class="carousel-item">
+              <img class="bd-placeholder-img" width="100%" height="100%" src="../assets/images/asset-6.jpeg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="var(--bs-secondary-color)"/>
             </div>
           </div>
           <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
