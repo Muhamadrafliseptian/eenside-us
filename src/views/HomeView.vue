@@ -1,48 +1,76 @@
 <script setup>
 import sound from '../assets/video/fall.mp3'
+import dewa from '../assets/video/akumilikmu.mp3'
+import edsheeran from '../assets/video/edsheeran.mp3'
+import glenFred from '../assets/video/glen.mp3'
+import rezaart from '../assets/video/reza.mp3'
+import dewadua from '../assets/video/dewadua.mp3'
 import { ref, onMounted } from 'vue';
 import endahImage from '../assets/images/asset-1.jpeg'
 
-const audio = new Audio(sound);
+const dewas = new Audio(dewa);
+const jamesArthur = new Audio(sound);
+const edSheeran = new Audio(edsheeran);
+const glen = new Audio(glenFred);
+const rezaArt = new Audio(rezaart);
+const dewaDua = new Audio(dewadua);
+
+const stopAllMusic = () => {
+  [dewas, glen, edSheeran, jamesArthur, rezaArt, dewaDua].forEach((audio) => {
+    audio.pause();
+    audio.currentTime = 0; // Reset waktu pemutaran
+  });
+};
 
 const playMusic = () => {
-  audio.play();
+  stopAllMusic(); // Hentikan semua musik
+  dewas.play(); // Mainkan lagu "Dewa"
 };
 
-const countdown = ref({
-  days: 0,
-  hours: 0,
-  minutes: 0,
-  seconds: 0,
-});
-
-const targetDate = new Date('2024-12-28T00:00:00+07:00');
-
-const updateCountdown = () => {
-  const now = new Date();
-  const difference = targetDate - now;
-
-  if (difference > 0) {
-    countdown.value = {
-      days: Math.floor(difference / (1000 * 60 * 60 * 24)),
-      hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
-      minutes: Math.floor((difference / (1000 * 60)) % 60),
-      seconds: Math.floor((difference / 1000) % 60),
-    };
-  } else {
-    countdown.value = {
-      days: 0,
-      hours: 0,
-      minutes: 0,
-      seconds: 0,
-    };
-  }
+const playMusicJames = () => {
+  stopAllMusic(); // Hentikan semua musik
+  jamesArthur.play(); // Mainkan lagu "James Arthur"
 };
 
-onMounted(() => {
-  updateCountdown();
-  setInterval(updateCountdown, 1000);
-});
+const stopMusicJamesArthur = () => {
+  stopAllMusic(); // Hentikan semua musik
+};
+
+const playMusicGlen = () => {
+  stopAllMusic(); // Hentikan semua musik
+  glen.play(); // Mainkan lagu "Glen"
+};
+
+const stopMusicGlen = () => {
+  stopAllMusic(); // Hentikan semua musik
+};
+
+const playEdSheeran = () => {
+  stopAllMusic(); // Hentikan semua musik
+  edSheeran.play(); // Mainkan lagu "Glen"
+};
+
+const stopEdSheeran = () => {
+  stopAllMusic(); // Hentikan semua musik
+};
+
+const playReza = () => {
+  stopAllMusic(); // Hentikan semua musik
+  playReza.play(); // Mainkan lagu "Glen"
+};
+
+const stopRezaArt = () => {
+  stopAllMusic(); // Hentikan semua musik
+};
+
+const playDewaDua = () => {
+  stopAllMusic(); // Hentikan semua musik
+  dewaDua.play(); // Mainkan lagu "Glen"
+};
+
+const stopDewaDua = () => {
+  stopAllMusic(); // Hentikan semua musik
+};
 </script>
 
 <style>
@@ -56,6 +84,22 @@ onMounted(() => {
   width: 100%;
   height: 500px;
   object-fit: cover;
+}
+
+/* Responsif untuk tablet */
+@media (max-width: 768px) {
+  .carousel-inner .item-second img {
+    height: 500px;
+    /* Kurangi tinggi gambar untuk layar yang lebih kecil */
+  }
+}
+
+/* Responsif untuk ponsel */
+@media (max-width: 576px) {
+  .carousel-inner .item-second img {
+    height: 500px;
+    /* Kurangi tinggi lebih jauh untuk ponsel */
+  }
 }
 </style>
 
@@ -156,7 +200,7 @@ onMounted(() => {
     </div>
   </div>
 
-  <div class="container-fluid my-5">
+  <div class="container-fluid">
     <div class="row p-4 pb-0 pe-lg-0 pt-lg-5 align-items-center justify-content-center">
       <div class="col-lg-4">
         <div id="myCarouselSecond" class="carousel slide mb-6" data-bs-ride="carousel">
@@ -243,6 +287,94 @@ onMounted(() => {
           at every moment!
 
         </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <h2 class="text-center mb-4">Spotify MOD rusak, jadi di sini aja playlistnya</h2>
+    <div class="list-group mb-5">
+      <div class="list-group-item d-flex justify-content-between align-items-center">
+        <div>
+          <strong>Falling Like The Star</strong>
+          <p class="mb-0 text-muted">James Arthur</p>
+        </div>
+        <div>
+          <button class="btn btn-primary btn-sm me-2" @click="playMusicJames()">
+            ▶ Play
+          </button>
+          <button class="btn btn-danger btn-sm" @click="stopMusicJamesArthur()">
+            ⏹ Stop
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="list-group mb-5">
+      <div class="list-group-item d-flex justify-content-between align-items-center">
+        <div>
+          <strong>Adu Rayu</strong>
+          <p class="mb-0 text-muted">Tulus feat Glen</p>
+        </div>
+        <div>
+          <button class="btn btn-primary btn-sm me-2" @click="playMusicGlen()">
+            ▶ Play
+          </button>
+          <button class="btn btn-danger btn-sm" @click="stopMusicGlen()">
+            ⏹ Stop
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="list-group mb-5">
+      <div class="list-group-item d-flex justify-content-between align-items-center">
+        <div>
+          <strong>Photograph</strong>
+          <p class="mb-0 text-muted">Ed Sheeran</p>
+        </div>
+        <div>
+          <button class="btn btn-primary btn-sm me-2" @click="playEdSheeran()">
+            ▶ Play
+          </button>
+          <button class="btn btn-danger btn-sm" @click="stopEdSheeran()">
+            ⏹ Stop
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="list-group mb-5">
+      <div class="list-group-item d-flex justify-content-between align-items-center">
+        <div>
+          <strong>Keabadian</strong>
+          <p class="mb-0 text-muted">Reza Artamevia</p>
+        </div>
+        <div>
+          <button class="btn btn-primary btn-sm me-2" @click="playReza()">
+            ▶ Play
+          </button>
+          <button class="btn btn-danger btn-sm" @click="stopRezaArt()">
+            ⏹ Stop
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="list-group mb-5">
+      <div class="list-group-item d-flex justify-content-between align-items-center">
+        <div>
+          <strong>Cintakan membawamu kembali</strong>
+          <p class="mb-0 text-muted">Dewa 19 ft Virzha</p>
+        </div>
+        <div>
+          <button class="btn btn-primary btn-sm me-2" @click="playDewaDua()">
+            ▶ Play
+          </button>
+          <button class="btn btn-danger btn-sm" @click="stopDewaDua()">
+            ⏹ Stop
+          </button>
+        </div>
       </div>
     </div>
   </div>
