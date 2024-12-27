@@ -467,5 +467,9 @@ const stopDewaDua = () => {
     <button class="btn btn-primary mt-4" @click="spin">Putar</button>
   </div>
 
+  <div class="container text-center mt-5">
+    <h5 class="mb-4">Maaf, Gak banyak yang bisa aku kasih di hari spesial kamu ini. Semoga dengan adanya website ini, gibran sadar bahwa ada dua muda-mudi yang udah saling jatuh hati. eakkkk</h5>
+  </div>
+
 
 </template>
