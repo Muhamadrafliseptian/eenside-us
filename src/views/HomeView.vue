@@ -7,6 +7,7 @@ import rezaart from '../assets/video/reza.mp3'
 import dewadua from '../assets/video/dewadua.mp3'
 import { ref, onMounted } from 'vue';
 import endahImage from '../assets/images/asset-1.jpeg'
+import confetti from 'canvas-confetti';
 
 const dewas = new Audio(dewa);
 const jamesArthur = new Audio(sound);
@@ -22,9 +23,40 @@ const stopAllMusic = () => {
   });
 };
 
+const options = ["Artis", "Murid Ustad Soleh Pati", "Owner Seblak DSA", "Ahli Gizinya Gibran", "Mba2 SCBD", "Finalis Idol", "Pegawai Badan Gizi Nasional"]; // Opsi roller
+const currentRotation = ref(0); // Rotasi spinner
+const result = ref(null); // Hasil jawaban
+
+const spin = () => {
+  const spins = Math.floor(Math.random() * 5) + 5; // Acak jumlah putaran (antara 5 dan 10)
+  const index = Math.floor(Math.random() * options.length); // Acak indeks berdasarkan panjang opsi
+  const anglePerItem = 360 / options.length; // Derajat per item
+  const angle = spins * 360 + index * anglePerItem; // Total rotasi
+
+  currentRotation.value += angle; // Tambah rotasi
+  result.value = options[index]; // Simpan hasil
+
+  console.log("Spin Index:", index); // Debug indeks acak
+  console.log("Selected Option:", options[index]); // Debug opsi yang dipilih
+};
+
+
 const playMusic = () => {
   stopAllMusic(); // Hentikan semua musik
   dewas.play(); // Mainkan lagu "Dewa"
+  const interval = setInterval(() => {
+    confetti({
+      particleCount: 100, // Jumlah partikel untuk setiap animasi
+      spread: 100, // Penyebaran partikel
+      origin: { y: 0.6 },
+    });
+  }, 500); // Memunculkan confetti setiap 500ms
+
+  // Hentikan confetti setelah 1 menit
+  setTimeout(() => {
+    clearInterval(interval); // Hentikan interval
+  }, 60000); // 60000ms = 1 menit
+
 };
 
 const playMusicJames = () => {
@@ -56,7 +88,7 @@ const stopEdSheeran = () => {
 
 const playReza = () => {
   stopAllMusic(); // Hentikan semua musik
-  playReza.play(); // Mainkan lagu "Glen"
+  rezaArt.play(); // Mainkan lagu "Glen"
 };
 
 const stopRezaArt = () => {
@@ -101,10 +133,54 @@ const stopDewaDua = () => {
     /* Kurangi tinggi lebih jauh untuk ponsel */
   }
 }
+
+.spinner-container {
+  perspective: 1000px;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.spinner {
+  width: 200px;
+  height: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transform-style: preserve-3d;
+  transition: transform 2s ease-out;
+}
+
+.spinner-item {
+  position: absolute;
+  font-size: 18px;
+  font-weight: bold;
+  background: #f8f9fa;
+  border: 2px solid #ccc;
+  padding: 10px;
+  border-radius: 10px;
+  width: 150px;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.spinner-item:nth-child(1) {
+  transform: rotateX(0deg) translateZ(50px);
+}
+
+.spinner-item:nth-child(2) {
+  transform: rotateX(120deg) translateZ(50px);
+}
+
+.spinner-item:nth-child(3) {
+  transform: rotateX(240deg) translateZ(50px);
+}
 </style>
 
 <template>
-  <div class="container-fluid my-5" :style="{
+  <div class="container-fluid" :style="{
     backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${endahImage})`,
     backgroundSize: 'cover',
     backgroundPosition: 'center',
@@ -179,7 +255,7 @@ const stopDewaDua = () => {
 
   </div>
 
-  <div class="container" id="image">
+  <div class="container my-5" id="image">
     <h1>Ah, Lucu banget!</h1>
     <div class="row row-cols-1 row-cols-md-3 g-4">
       <div class="col">
@@ -377,6 +453,18 @@ const stopDewaDua = () => {
         </p>
       </div>
     </div>
+  </div>
+
+  <div class="container text-center mt-5">
+    <h2 class="mb-4">Jadi apaaa yaaa endah dalam 1200 tahun nantiii</h2>
+    <div class="spinner-container">
+      <div class="spinner" :style="{ transform: `rotateX(${currentRotation}deg)` }">
+        <div v-for="(item, index) in options" :key="index" class="spinner-item">
+          {{ item }}
+        </div>
+      </div>
+    </div>
+    <button class="btn btn-primary mt-4" @click="spin">Putar</button>
   </div>
 
 

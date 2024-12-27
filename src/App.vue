@@ -10,7 +10,7 @@ const playVideo = () => {
 </script>
 
 <template>
-  <NavbarLayout/>
+  <!-- <NavbarLayout/> -->
   <RouterView/>
 </template>
 
