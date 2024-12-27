@@ -200,8 +200,8 @@ const stopDewaDua = () => {
     </div>
   </div>
 
-  <div class="container">
-    <h2 class="text-center mb-4">Pilih dulu lagunya</h2>
+  <div class="container my-5">
+    <h2 class="text-center mb-4">Pilih dulu lagunya sebelum lanjut section berikutnya!!!</h2>
     <div class="list-group mb-5">
       <div class="list-group-item d-flex justify-content-between align-items-center">
         <div>
