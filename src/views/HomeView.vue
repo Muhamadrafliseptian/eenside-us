@@ -456,6 +456,7 @@ const stopDewaDua = () => {
   </div>
 
   <div class="container text-center mt-5">
+    <h5>Section Intermezooo</h5>
     <h2 class="mb-4">Jadi apaaa yaaa endah dalam 1200 tahun nantiii</h2>
     <div class="spinner-container">
       <div class="spinner" :style="{ transform: `rotateX(${currentRotation}deg)` }">
