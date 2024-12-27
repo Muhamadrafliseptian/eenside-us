@@ -200,6 +200,94 @@ const stopDewaDua = () => {
     </div>
   </div>
 
+  <div class="container">
+    <h2 class="text-center mb-4">Pilih dulu lagunya</h2>
+    <div class="list-group mb-5">
+      <div class="list-group-item d-flex justify-content-between align-items-center">
+        <div>
+          <strong>Falling Like The Star</strong>
+          <p class="mb-0 text-muted">James Arthur</p>
+        </div>
+        <div>
+          <button class="btn btn-primary btn-sm me-2" @click="playMusicJames()">
+            ▶ Play
+          </button>
+          <button class="btn btn-danger btn-sm" @click="stopMusicJamesArthur()">
+            ⏹ Stop
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="list-group mb-5">
+      <div class="list-group-item d-flex justify-content-between align-items-center">
+        <div>
+          <strong>Adu Rayu</strong>
+          <p class="mb-0 text-muted">Tulus feat Glen</p>
+        </div>
+        <div>
+          <button class="btn btn-primary btn-sm me-2" @click="playMusicGlen()">
+            ▶ Play
+          </button>
+          <button class="btn btn-danger btn-sm" @click="stopMusicGlen()">
+            ⏹ Stop
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="list-group mb-5">
+      <div class="list-group-item d-flex justify-content-between align-items-center">
+        <div>
+          <strong>Photograph</strong>
+          <p class="mb-0 text-muted">Ed Sheeran</p>
+        </div>
+        <div>
+          <button class="btn btn-primary btn-sm me-2" @click="playEdSheeran()">
+            ▶ Play
+          </button>
+          <button class="btn btn-danger btn-sm" @click="stopEdSheeran()">
+            ⏹ Stop
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="list-group mb-5">
+      <div class="list-group-item d-flex justify-content-between align-items-center">
+        <div>
+          <strong>Keabadian</strong>
+          <p class="mb-0 text-muted">Reza Artamevia</p>
+        </div>
+        <div>
+          <button class="btn btn-primary btn-sm me-2" @click="playReza()">
+            ▶ Play
+          </button>
+          <button class="btn btn-danger btn-sm" @click="stopRezaArt()">
+            ⏹ Stop
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="list-group mb-5">
+      <div class="list-group-item d-flex justify-content-between align-items-center">
+        <div>
+          <strong>Cintakan membawamu kembali</strong>
+          <p class="mb-0 text-muted">Dewa 19 ft Virzha</p>
+        </div>
+        <div>
+          <button class="btn btn-primary btn-sm me-2" @click="playDewaDua()">
+            ▶ Play
+          </button>
+          <button class="btn btn-danger btn-sm" @click="stopDewaDua()">
+            ⏹ Stop
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <div class="container-fluid">
     <div class="row p-4 pb-0 pe-lg-0 pt-lg-5 align-items-center justify-content-center">
       <div class="col-lg-4">
@@ -291,91 +379,5 @@ const stopDewaDua = () => {
     </div>
   </div>
 
-  <div class="container">
-    <h2 class="text-center mb-4">Spotify MOD rusak, jadi di sini aja playlistnya</h2>
-    <div class="list-group mb-5">
-      <div class="list-group-item d-flex justify-content-between align-items-center">
-        <div>
-          <strong>Falling Like The Star</strong>
-          <p class="mb-0 text-muted">James Arthur</p>
-        </div>
-        <div>
-          <button class="btn btn-primary btn-sm me-2" @click="playMusicJames()">
-            ▶ Play
-          </button>
-          <button class="btn btn-danger btn-sm" @click="stopMusicJamesArthur()">
-            ⏹ Stop
-          </button>
-        </div>
-      </div>
-    </div>
 
-    <div class="list-group mb-5">
-      <div class="list-group-item d-flex justify-content-between align-items-center">
-        <div>
-          <strong>Adu Rayu</strong>
-          <p class="mb-0 text-muted">Tulus feat Glen</p>
-        </div>
-        <div>
-          <button class="btn btn-primary btn-sm me-2" @click="playMusicGlen()">
-            ▶ Play
-          </button>
-          <button class="btn btn-danger btn-sm" @click="stopMusicGlen()">
-            ⏹ Stop
-          </button>
-        </div>
-      </div>
-    </div>
-
-    <div class="list-group mb-5">
-      <div class="list-group-item d-flex justify-content-between align-items-center">
-        <div>
-          <strong>Photograph</strong>
-          <p class="mb-0 text-muted">Ed Sheeran</p>
-        </div>
-        <div>
-          <button class="btn btn-primary btn-sm me-2" @click="playEdSheeran()">
-            ▶ Play
-          </button>
-          <button class="btn btn-danger btn-sm" @click="stopEdSheeran()">
-            ⏹ Stop
-          </button>
-        </div>
-      </div>
-    </div>
-
-    <div class="list-group mb-5">
-      <div class="list-group-item d-flex justify-content-between align-items-center">
-        <div>
-          <strong>Keabadian</strong>
-          <p class="mb-0 text-muted">Reza Artamevia</p>
-        </div>
-        <div>
-          <button class="btn btn-primary btn-sm me-2" @click="playReza()">
-            ▶ Play
-          </button>
-          <button class="btn btn-danger btn-sm" @click="stopRezaArt()">
-            ⏹ Stop
-          </button>
-        </div>
-      </div>
-    </div>
-
-    <div class="list-group mb-5">
-      <div class="list-group-item d-flex justify-content-between align-items-center">
-        <div>
-          <strong>Cintakan membawamu kembali</strong>
-          <p class="mb-0 text-muted">Dewa 19 ft Virzha</p>
-        </div>
-        <div>
-          <button class="btn btn-primary btn-sm me-2" @click="playDewaDua()">
-            ▶ Play
-          </button>
-          <button class="btn btn-danger btn-sm" @click="stopDewaDua()">
-            ⏹ Stop
-          </button>
-        </div>
-      </div>
-    </div>
-  </div>
 </template>
